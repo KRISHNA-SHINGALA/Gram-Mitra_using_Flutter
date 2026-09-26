@@ -1,0 +1,17 @@
+{
+  "@@locale": "hi",
+
+  "appName": "ग्राममित्र",
+  "appTagline": "मेरा गाँव • मेरी जानकारी • मेरा भविष्य",
+
+  "chooseLanguage": "अपनी भाषा चुनें",
+  "yourLanguage": "आपकी भाषा",
+
+  "gujarati": "ગુજરાતી",
+  "hindi": "हिन्दी",
+  "english": "अंग्रेज़ी",
+
+  "continueButton": "जारी रखें",
+
+  "loading": "लोड हो रहा है..."
+}

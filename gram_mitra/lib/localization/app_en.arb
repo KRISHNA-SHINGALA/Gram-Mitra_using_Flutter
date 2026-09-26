@@ -1,0 +1,17 @@
+{
+  "@@locale": "en",
+
+  "appName": "GramMitra",
+  "appTagline": "My Village • My Information • My Future",
+
+  "chooseLanguage": "Choose your language",
+  "yourLanguage": "Your language",
+
+  "gujarati": "Gujarati",
+  "hindi": "Hindi",
+  "english": "English",
+
+  "continueButton": "Continue",
+
+  "loading": "Loading..."
+}

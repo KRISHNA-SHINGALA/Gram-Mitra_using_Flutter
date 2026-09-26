@@ -1,0 +1,17 @@
+{
+  "@@locale": "gu",
+
+  "appName": "ગ્રામમિત્ર",
+  "appTagline": "મારું ગામ • મારી માહિતી • મારું ભવિષ્ય",
+
+  "chooseLanguage": "તમારી ભાષા પસંદ કરો",
+  "yourLanguage": "તમારી ભાષા",
+
+  "gujarati": "ગુજરાતી",
+  "hindi": "હિન્દી",
+  "english": "અંગ્રેજી",
+
+  "continueButton": "ચાલુ રાખો",
+
+  "loading": "લોડ થઈ રહ્યું છે..."
+}
