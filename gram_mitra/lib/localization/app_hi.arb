@@ -13,5 +13,32 @@
 
   "continueButton": "जारी रखें",
 
-  "loading": "लोड हो रहा है..."
+  "loading": "लोड हो रहा है...",
+
+  "welcomeToGramMitra": "ग्राममित्र में आपका स्वागत है",
+  "loginToContinue": "आगे बढ़ने के लिए लॉगिन करें",
+  "mobileNumber": "मोबाइल नंबर",
+  "enterMobileNumber": "अपना मोबाइल नंबर दर्ज करें",
+  "password": "पासवर्ड",
+  "enterPassword": "अपना पासवर्ड दर्ज करें",
+  "forgotPassword": "पासवर्ड भूल गए?",
+  "login": "लॉगिन",
+  "dontHaveAccount": "क्या आपका अकाउंट नहीं है?",
+  "register": "रजिस्टर करें",
+
+  "createYourAccount": "अपना अकाउंट बनाएं",
+  "registerToUseGramMitra": "ग्राममित्र का उपयोग करने के लिए रजिस्टर करें",
+  "fullName": "पूरा नाम",
+  "enterYourName": "अपना नाम दर्ज करें",
+  "confirmPassword": "पासवर्ड की पुष्टि करें",
+  "confirmYourPassword": "अपना पासवर्ड फिर से दर्ज करें",
+
+  "resetYourPassword": "अपना पासवर्ड रीसेट करें",
+  "enterMobileForOtp": "OTP प्राप्त करने के लिए अपना रजिस्टर्ड मोबाइल नंबर दर्ज करें।",
+  "sendOtp": "OTP भेजें",
+
+  "verifyOtp": "OTP सत्यापित करें",
+  "otpSentTo": "OTP भेजा गया है",
+  "didNotReceiveOtp": "OTP नहीं मिला?",
+  "resendOtp": "OTP फिर से भेजें"
 }

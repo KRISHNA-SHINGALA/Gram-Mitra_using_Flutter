@@ -13,5 +13,32 @@
 
   "continueButton": "ચાલુ રાખો",
 
-  "loading": "લોડ થઈ રહ્યું છે..."
+  "loading": "લોડ થઈ રહ્યું છે...",
+
+  "welcomeToGramMitra": "ગ્રામમિત્રમાં આપનું સ્વાગત છે",
+  "loginToContinue": "આગળ વધવા માટે લોગિન કરો",
+  "mobileNumber": "મોબાઇલ નંબર",
+  "enterMobileNumber": "તમારો મોબાઇલ નંબર દાખલ કરો",
+  "password": "પાસવર્ડ",
+  "enterPassword": "તમારો પાસવર્ડ દાખલ કરો",
+  "forgotPassword": "પાસવર્ડ ભૂલી ગયા છો?",
+  "login": "લોગિન",
+  "dontHaveAccount": "એકાઉન્ટ નથી?",
+  "register": "રજીસ્ટર કરો",
+
+  "createYourAccount": "તમારું એકાઉન્ટ બનાવો",
+  "registerToUseGramMitra": "ગ્રામમિત્રનો ઉપયોગ કરવા માટે રજીસ્ટર કરો",
+  "fullName": "પૂરું નામ",
+  "enterYourName": "તમારું નામ દાખલ કરો",
+  "confirmPassword": "પાસવર્ડની પુષ્ટિ કરો",
+  "confirmYourPassword": "તમારો પાસવર્ડ ફરીથી દાખલ કરો",
+
+  "resetYourPassword": "તમારો પાસવર્ડ રીસેટ કરો",
+  "enterMobileForOtp": "OTP મેળવવા માટે તમારો રજીસ્ટર્ડ મોબાઇલ નંબર દાખલ કરો.",
+  "sendOtp": "OTP મોકલો",
+
+  "verifyOtp": "OTP ચકાસો",
+  "otpSentTo": "OTP મોકલવામાં આવ્યો છે",
+  "didNotReceiveOtp": "OTP મળ્યો નથી?",
+  "resendOtp": "OTP ફરીથી મોકલો"
 }

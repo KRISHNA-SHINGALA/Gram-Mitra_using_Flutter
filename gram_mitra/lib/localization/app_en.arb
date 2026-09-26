@@ -13,5 +13,32 @@
 
   "continueButton": "Continue",
 
-  "loading": "Loading..."
+  "loading": "Loading...",
+
+  "welcomeToGramMitra": "Welcome to GramMitra",
+  "loginToContinue": "Login to continue",
+  "mobileNumber": "Mobile Number",
+  "enterMobileNumber": "Enter your mobile number",
+  "password": "Password",
+  "enterPassword": "Enter your password",
+  "forgotPassword": "Forgot Password?",
+  "login": "Login",
+  "dontHaveAccount": "Don't have an account?",
+  "register": "Register",
+
+  "createYourAccount": "Create your account",
+  "registerToUseGramMitra": "Register to use GramMitra",
+  "fullName": "Full Name",
+  "enterYourName": "Enter your name",
+  "confirmPassword": "Confirm Password",
+  "confirmYourPassword": "Confirm your password",
+
+  "resetYourPassword": "Reset your password",
+  "enterMobileForOtp": "Enter your registered mobile number to receive an OTP.",
+  "sendOtp": "Send OTP",
+
+  "verifyOtp": "Verify OTP",
+  "otpSentTo": "OTP sent to",
+  "didNotReceiveOtp": "Didn't receive the OTP?",
+  "resendOtp": "Resend OTP"
 }
