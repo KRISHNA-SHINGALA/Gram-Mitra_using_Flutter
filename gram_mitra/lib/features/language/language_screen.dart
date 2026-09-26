@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../../generated/app_localizations.dart';
+import '../auth/login/login_screen.dart';
+
 class LanguageScreen extends StatefulWidget {
-  const LanguageScreen({super.key});
+  final void Function(Locale locale) onLanguageChanged;
+
+  const LanguageScreen({
+    super.key,
+    required this.onLanguageChanged,
+  });
 
   @override
   State<LanguageScreen> createState() => _LanguageScreenState();
@@ -13,23 +21,33 @@ class _LanguageScreenState extends State<LanguageScreen> {
   final List<Map<String, String>> languages = [
     {
       'code': 'gu',
-      'nativeName': 'ગુજરાતી',
+      'name': 'ગુજરાતી',
       'englishName': 'Gujarati',
     },
     {
       'code': 'hi',
-      'nativeName': 'हिन्दी',
+      'name': 'हिन्दी',
       'englishName': 'Hindi',
     },
     {
       'code': 'en',
-      'nativeName': 'English',
+      'name': 'English',
       'englishName': 'English',
     },
   ];
 
+  void selectLanguage(String code) {
+    setState(() {
+      selectedLanguage = code;
+    });
+
+    widget.onLanguageChanged(Locale(code));
+  }
+
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -39,10 +57,28 @@ class _LanguageScreenState extends State<LanguageScreen> {
             children: [
               const Spacer(flex: 2),
 
-              const Text(
-                'તમારી ભાષા પસંદ કરો',
+              // Language icon
+              Container(
+                width: 76,
+                height: 76,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFE8F5E9),
+                  borderRadius: BorderRadius.circular(22),
+                ),
+                child: const Icon(
+                  Icons.language,
+                  size: 42,
+                  color: Color(0xFF2E7D32),
+                ),
+              ),
+
+              const SizedBox(height: 28),
+
+              // Heading
+              Text(
+                l10n.chooseLanguage,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF2E7D32),
@@ -51,34 +87,40 @@ class _LanguageScreenState extends State<LanguageScreen> {
 
               const SizedBox(height: 8),
 
-              const Text(
-                'Choose your language',
+              Text(
+                l10n.yourLanguage,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   color: Colors.black54,
                 ),
               ),
 
-              const SizedBox(height: 40),
+              const SizedBox(height: 38),
 
+              // Language options
               ...languages.map(
                 (language) => _buildLanguageCard(
                   code: language['code']!,
-                  nativeName: language['nativeName']!,
+                  name: language['name']!,
                   englishName: language['englishName']!,
                 ),
               ),
 
               const Spacer(),
 
+              // Continue button
               SizedBox(
                 width: double.infinity,
                 height: 54,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Later we will save the language
-                    // and navigate to Login/Register.
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Login(),
+                      ),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF2E7D32),
@@ -88,9 +130,9 @@ class _LanguageScreenState extends State<LanguageScreen> {
                       borderRadius: BorderRadius.circular(14),
                     ),
                   ),
-                  child: const Text(
-                    'ચાલુ રાખો',
-                    style: TextStyle(
+                  child: Text(
+                    l10n.continueButton,
+                    style: const TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w600,
                     ),
@@ -108,16 +150,14 @@ class _LanguageScreenState extends State<LanguageScreen> {
 
   Widget _buildLanguageCard({
     required String code,
-    required String nativeName,
+    required String name,
     required String englishName,
   }) {
     final bool isSelected = selectedLanguage == code;
 
     return GestureDetector(
       onTap: () {
-        setState(() {
-          selectedLanguage = code;
-        });
+        selectLanguage(code);
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
@@ -142,15 +182,16 @@ class _LanguageScreenState extends State<LanguageScreen> {
         child: Row(
           children: [
             Container(
-              width: 44,
-              height: 44,
+              width: 46,
+              height: 46,
               decoration: BoxDecoration(
-                color: const Color(0xFFE8F5E9),
+                color: const Color(0xFFF1F8F2),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Icon(
-                Icons.language,
-                color: const Color(0xFF2E7D32),
+              child: const Icon(
+                Icons.translate,
+                color: Color(0xFF2E7D32),
+                size: 24,
               ),
             ),
 
@@ -161,10 +202,11 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    nativeName,
+                    name,
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
+                      color: Colors.black87,
                     ),
                   ),
                   const SizedBox(height: 3),
@@ -179,12 +221,22 @@ class _LanguageScreenState extends State<LanguageScreen> {
               ),
             ),
 
-            if (isSelected)
-              const Icon(
-                Icons.check_circle,
-                color: Color(0xFF2E7D32),
-                size: 26,
-              ),
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 200),
+              child: isSelected
+                  ? const Icon(
+                      Icons.check_circle,
+                      key: ValueKey('selected'),
+                      color: Color(0xFF2E7D32),
+                      size: 27,
+                    )
+                  : Icon(
+                      Icons.radio_button_unchecked,
+                      key: const ValueKey('unselected'),
+                      color: Colors.grey.shade400,
+                      size: 27,
+                    ),
+            ),
           ],
         ),
       ),

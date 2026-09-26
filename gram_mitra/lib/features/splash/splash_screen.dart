@@ -5,7 +5,12 @@ import 'package:flutter/material.dart';
 import '../language/language_screen.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  final void Function(Locale locale) onLanguageChanged;
+
+  const SplashScreen({
+    super.key,
+    required this.onLanguageChanged,
+  });
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -22,7 +27,9 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const LanguageScreen(),
+          builder: (context) => LanguageScreen(
+            onLanguageChanged: widget.onLanguageChanged,
+          ),
         ),
       );
     });
@@ -37,7 +44,6 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // GramMitra Logo
               Image.asset(
                 'assets/logo/gram_mitra_app_logo.png',
                 width: 170,
@@ -47,7 +53,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
               const SizedBox(height: 24),
 
-              // App Name
               const Text(
                 'GramMitra',
                 style: TextStyle(
@@ -60,7 +65,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
               const SizedBox(height: 10),
 
-              // Tagline
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
@@ -76,7 +80,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
               const SizedBox(height: 45),
 
-              // Loading Indicator
               const SizedBox(
                 width: 24,
                 height: 24,
