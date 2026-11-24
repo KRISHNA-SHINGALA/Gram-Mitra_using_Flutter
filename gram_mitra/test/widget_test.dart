@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gram_mitra/main.dart';
+import 'package:grammitra/main.dart';
 
 void main() {
   testWidgets('GramMitra splash screen loads', (WidgetTester tester) async {
